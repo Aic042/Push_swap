@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   finisih_checker.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 11:10:06 by aingunza          #+#    #+#             */
-/*   Updated: 2025/01/30 15:55:32 by aingunza         ###   ########.fr       */
+/*   Created: 2025/01/30 13:11:08 by aingunza          #+#    #+#             */
+/*   Updated: 2025/01/30 15:52:58 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-#define Err_message "Nah, this thing ain't working"
-
-typedef struct s_stacknode
+void argc_checker(int argc)
 {
-    int nbr;
-    int index;
-    int push_cost;
-    int push_cost;
-    // bool
-};
+    if(argc < 1)
+        ft_error;
+}
 
-typedef struct push_tils
+void finished_stacking(t_push_utils *push_utils)
 {
-    int     signal;
-} t_push_utils
+    if(signal == on)
+    {
+        exit(EXIT_SUCCESS);
+    }
+}
 
-#endif
+void ft_error()
+{
+    ft_printf(Err_message);
+}
