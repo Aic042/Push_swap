@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:10:06 by aingunza          #+#    #+#             */
-/*   Updated: 2025/01/30 16:13:52 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/02/01 17:56:13 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define Err_message "Nah, this thing ain't working"
+#define Err_message "Nah, this thing ain't working\n"
+#define Err_type_no_int "Check those args please. You did? Okay, check again.\n"
+#define Err_type_long_num "There has to be some big ahh number cause this thing ain't working\n"
+#define Err_type_duplicate "Duplicate numbers. I repeat, duplicate numbers. 🦜\n"
 
 typedef struct s_stacknode
 {
