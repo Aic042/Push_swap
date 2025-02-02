@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   finisih_checker.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 13:11:08 by aingunza          #+#    #+#             */
-/*   Updated: 2025/02/02 12:31:45 by root             ###   ########.fr       */
+/*   Created: 2025/02/02 12:57:41 by root              #+#    #+#             */
+/*   Updated: 2025/02/02 13:45:49 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void argc_checker(int argc)
+int main(int argc, char **argv)
 {
-	if(argc < 1)
-		ft_error;
-}
+	t_stack_node *a;
+	t_stack_node *b;
 
-void finished_stacking(t_push_utils *push_utils)
-{
-	if(signal == on)
+	a = NULL;
+	b = NULL;
 	
+	if(argc == 1 || (argc == 2 && !argv[1][0]))
+		return(1);
+	else if (argc == 2)
+		argv = ft_split(argv[1], ' ');
+	init_stack_a(&a, argv + 1);
+	if(!stack_sorted(a))
 	{
-		exit(EXIT_SUCCESS);
+		if(stack_len(a) == 2)
+			sa(&a, false);
+		else if (stack_len(a) == 3)
+			sort_three(&a);
+		else
+			sort_stacks(&a, &b);
 	}
-}
-
-void ft_error(const char *error_type) {
-	printf("%s%s", Err_message, e	rror_type);
+	free_stacks(&a);
+	return(0);
 }

@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:10:06 by aingunza          #+#    #+#             */
-/*   Updated: 2025/02/01 17:56:13 by root             ###   ########.fr       */
+/*   Updated: 2025/02/02 13:46:16 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,16 @@ typedef struct s_stacknode
     int index;
     int push_cost;
     int push_cost;
-    bool    
-};
+    bool    above_median;
+    bool    cheapest;
+    struct s_stack_node *target_node;
+    struct s_stack_node *next;
+    struct s_stack_node *prev;
+} t_stack_node;
 
 typedef struct push_tils
 {
     int     signal;
-} t_push_utils
+} t_push_utils;
 
 #endif

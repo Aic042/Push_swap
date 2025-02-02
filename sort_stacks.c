@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   finisih_checker.c                                  :+:      :+:    :+:   */
+/*   sort_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 13:11:08 by aingunza          #+#    #+#             */
-/*   Updated: 2025/02/02 12:31:45 by root             ###   ########.fr       */
+/*   Created: 2025/02/02 17:59:13 by root              #+#    #+#             */
+/*   Updated: 2025/02/02 20:43:24 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void argc_checker(int argc)
+void	sort_stacks(t_stack_node **a, t_stack_node **b)
 {
-	if(argc < 1)
-		ft_error;
-}
-
-void finished_stacking(t_push_utils *push_utils)
-{
-	if(signal == on)
+	int len_a;
 	
+	len_a = stack_len(*a);
+	if(len_a-- > 3 && !stack_sorted(*a))
+		pb(b, a, false);
+	if(len_a-- > 3 && !stack_sorted(*a))
+		pb(b, a, false);
+	while(len_a-- > 3 && !stack_sorted(*a))
 	{
-		exit(EXIT_SUCCESS);
+		init_nodes_a(*a, *b);
+		move_a_to_b(a, b);
 	}
-}
-
-void ft_error(const char *error_type) {
-	printf("%s%s", Err_message, e	rror_type);
+	sort_three(a);
+	while(*b)
+	{
+		init_nodes_b(*a, *b);
+		move_b_to_a(a, b);
+	}
+	current_index(*a);
+	min_on_top(a);
 }
