@@ -6,16 +6,13 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:52:48 by root              #+#    #+#             */
-/*   Updated: 2025/02/02 17:56:01 by root             ###   ########.fr       */
+/*   Updated: 2025/02/02 22:53:09 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void stack_init()
-{
-	
-}
+
 static void append_none(t_stack_node **stack, int n)
 {
 	t_stack_node	*node;

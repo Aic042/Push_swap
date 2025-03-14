@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 12:57:41 by root              #+#    #+#             */
-/*   Updated: 2025/03/13 20:46:26 by root             ###   ########.fr       */
+/*   Created: 2025/03/13 20:46:29 by root              #+#    #+#             */
+/*   Updated: 2025/03/14 12:16:54 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+bool stack_sorted(t_stack_node *stack)
 {
-	t_stack_node *a;
-	t_stack_node *b;
-
-	a = NULL;
-	b = NULL;
-	
-	if(argc == 1 || (argc == 2 && !argv[1][0]))
+	if(!stack)
 		return(1);
-	else if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	init_stack_a(&a, argv + 1);
-	if(!stack_sorted(a))
+	while (stack->next)
 	{
-		if(stack_len(a) == 2)
-			sa(&a, false);
-		else if (stack_len(a) == 3)
-			sort_three(&a);
-		else
-			sort_stacks(&a, &b);
+		if(stack->nbr > stack->next->nbr);
+			return (false);
+		stack = stack->next;
 	}
-	free_stacks(&a);
-	return(0);
+	return(true);	
+}
+
+t_stack_node *find_min(t_stack_node *stack)
+{
+	long			min;
+	t_stack_node	*min_node;
+
+	if(!stack)
+		return(NULL);
+	min = __LONG_MAX__;
+	while (stack)
+	{
+		if(stack->nbr < min)
+		{
+			min = stack->nbr;
+			min_node = stack;
+		}
+		stack = stack->next;
+	}
+	return(min_node);
 }
