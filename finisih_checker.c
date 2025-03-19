@@ -3,30 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   finisih_checker.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 13:11:08 by aingunza          #+#    #+#             */
-/*   Updated: 2025/03/19 12:47:01 by root             ###   ########.fr       */
+/*   Updated: 2025/03/19 17:33:25 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void argc_checker(int argc)
+int	argc_checker(int argc)
 {
 	if(argc < 1)
-		ft_error;
-}
-
-void finished_stacking(t_push_utils *push_utils)
-{
-	if(signal == on)
-	
 	{
-		exit(EXIT_SUCCESS);
-	}
-}
-
-void ft_error(const char *error_type) {
-	printf("%s%s", Err_message, error_type);
+		ft_printf("Not enough arguments");
+		return 0;
+	}	
+	else
+		return 1;
 }
