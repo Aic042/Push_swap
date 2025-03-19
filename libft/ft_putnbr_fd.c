@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   finisih_checker.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 13:11:08 by aingunza          #+#    #+#             */
-/*   Updated: 2025/03/19 12:47:01 by root             ###   ########.fr       */
+/*   Created: 2024/07/04 14:27:31 by aingunza          #+#    #+#             */
+/*   Updated: 2024/07/05 10:53:36 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void argc_checker(int argc)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if(argc < 1)
-		ft_error;
-}
+	long	b;
 
-void finished_stacking(t_push_utils *push_utils)
-{
-	if(signal == on)
-	
+	b = n;
+	if (b < 0)
 	{
-		exit(EXIT_SUCCESS);
+		ft_putchar_fd('-', fd);
+		b = b * -1;
 	}
-}
-
-void ft_error(const char *error_type) {
-	printf("%s%s", Err_message, error_type);
+	if (b > 9)
+	{
+		ft_putnbr_fd(b / 10, fd);
+		ft_putnbr_fd(b % 10, fd);
+	}
+	else
+		ft_putchar_fd(b + '0', fd);
 }

@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 12:57:41 by root              #+#    #+#             */
-/*   Updated: 2025/03/13 20:46:26 by root             ###   ########.fr       */
+/*   Updated: 2025/03/19 12:48:00 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int main(int argc, char **argv)
 		else
 			sort_stacks(&a, &b);
 	}
-	free_stacks(&a);
+	free_stack(&a);
 	return(0);
 }

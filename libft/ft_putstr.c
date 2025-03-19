@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   finisih_checker.c                                  :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 13:11:08 by aingunza          #+#    #+#             */
-/*   Updated: 2025/03/19 12:47:01 by root             ###   ########.fr       */
+/*   Created: 2024/10/21 12:50:35 by aingunza          #+#    #+#             */
+/*   Updated: 2025/03/10 18:11:18 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void argc_checker(int argc)
+int	ft_putstr(char *str)
 {
-	if(argc < 1)
-		ft_error;
-}
+	int	i;
 
-void finished_stacking(t_push_utils *push_utils)
-{
-	if(signal == on)
-	
+	if (str == NULL)
 	{
-		exit(EXIT_SUCCESS);
+		ft_putstr("(null)");
+		return (6);
 	}
-}
-
-void ft_error(const char *error_type) {
-	printf("%s%s", Err_message, error_type);
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:59:13 by root              #+#    #+#             */
-/*   Updated: 2025/02/04 19:54:39 by root             ###   ########.fr       */
+/*   Updated: 2025/03/16 12:26:41 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static void move_a_to_b(t_stack_node **a, t_stack_node **b)
 	if(cheapest_node = ge)
 	
 }
-
 
 void	sort_stacks(t_stack_node **a, t_stack_node **b)
 {
