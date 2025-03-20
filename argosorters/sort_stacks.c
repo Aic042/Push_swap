@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:59:13 by root              #+#    #+#             */
-/*   Updated: 2025/03/20 10:49:12 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/03/20 17:55:44 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,23 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 	prep_for_push(a, cheapest_node, 'a');
 	prep_for_push(b, cheapest_node->target_node, 'b');
 	pb(b, a, false);
+}
+
+static void	move_b_to_a(t_stack_node **a, t_stack_node **b)
+{
+	prep_for_push(a, (*b)->target_node, 'a');
+	pa(a, b, false);
+}
+
+static void min_on_top(t_stack_node **a)
+{
+	while ((*a)->nbr != find_min(*a)->nbr)
+	{
+		if (find_min(*a)->above_median)
+			ra(a, false);
+		else
+			rra(a, false);
+	}
 }
 
 void	sort_stacks(t_stack_node **a, t_stack_node **b)
