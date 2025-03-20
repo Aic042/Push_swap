@@ -3,63 +3,63 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:10:06 by aingunza          #+#    #+#             */
-/*   Updated: 2025/03/19 12:52:13 by root             ###   ########.fr       */
+/*   Updated: 2025/03/20 09:32:11 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdbool.h>
-#include <limits.h>
-#include "libft/libft.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <stdbool.h>
+# include <limits.h>
+# include "libft/libft.h"
 
-#define Err_message "Nah, this thing ain't working\n"
-#define Err_type_no_int "Check those args please. You did? Okay, check again.\n"
-#define Err_type_long_num "There has to be some big ahh number cause this thing ain't working\n"
-#define Err_type_duplicate "Duplicate numbers. I repeat, duplicate numbers. 🦜\n"
+# define ERR_MESSAGE "Error: Nah, this thing ain't working. \n"
+# define ERR_NO_INT "Error:Check those args please. \n"
+# define ERR_BIG_NUM "Error: There has to be some big number. \n"
+# define ERR_DUPLI "Error: Duplicate numbers. I repeat, duplicate numbers. 🦜\n"
 
 typedef struct s_stack_node
 {
-    int         nbr;
-    int         index;
-    int         push_cost;
-    bool        above_median;
-    bool        cheapest;
-    struct s_stack_node *target_node;
-    struct s_stack_node *next;
-    struct s_stack_node *prev;
-} t_stack_node;
+	int					nbr;
+	int					index;
+	int					push_cost;
+	bool				above_median;
+	bool				cheapest;
+	struct s_stack_node	*target_node;
+	struct s_stack_node	*next;
+	struct s_stack_node	*prev;
+}	t_stack_node;
 
-int				error_syntax(char *str_n); 
+int				error_syntax(char *str_n);
 int				error_duplicate(t_stack_node *a, int n);
 void			free_stack(t_stack_node **stack);
 void			free_errors(t_stack_node **a);
 
 //***Stack initiation
-void			init_stack_a(t_stack_node **a, char **argv); //Initiate stack `a` before processing
-char			**split(char *s, char c); //To handle input of numbers as a string argument, e.g. enclosed in " "
+void			init_stack_a(t_stack_node **a, char **argv);
+char			**split(char *s, char c);
 
 //***Nodes initiation
-void			init_nodes_a(t_stack_node *a, t_stack_node *b); //To prep all nodes for pushing `a` to `b`
-void			init_nodes_b(t_stack_node *a, t_stack_node *b); //To prep all nodes for pushing `b` back to `a`
-void			current_index(t_stack_node *stack); //Set the node's current index
-void			set_cheapest(t_stack_node *stack); //Set the stack's cheapest node
-t_stack_node	*get_cheapest(t_stack_node *stack); //Get the cheapest node of a stack
-void			prep_for_push(t_stack_node **s, t_stack_node *n, char c); //Prep the required nodes on top for pushing
+void			init_nodes_a(t_stack_node *a, t_stack_node *b);
+void			init_nodes_b(t_stack_node *a, t_stack_node *b);
+void			current_index(t_stack_node *stack);
+void			set_cheapest(t_stack_node *stack);
+t_stack_node	*get_cheapest(t_stack_node *stack);
+void			prep_for_push(t_stack_node **s, t_stack_node *n, char c);
 
 //***Stack utils
-int				stack_len(t_stack_node *stack); //Calculate the length of a stack
-t_stack_node	*find_last(t_stack_node *stack); //Find the last node of a stack
-bool			stack_sorted(t_stack_node *stack); //To check whether a stack is sorted
-t_stack_node	*find_min(t_stack_node *stack); //Find the smallest number
-t_stack_node	*find_max(t_stack_node *stack); //Find the biggest number
+int				stack_len(t_stack_node *stack);
+t_stack_node	*find_last(t_stack_node *stack);
+bool			stack_sorted(t_stack_node *stack);
+t_stack_node	*find_min(t_stack_node *stack);
+t_stack_node	*find_max(t_stack_node *stack);
 
 //***Commands
 void			sa(t_stack_node **a, bool print);
@@ -76,6 +76,6 @@ void			pb(t_stack_node **b, t_stack_node **a, bool print);
 
 //***Algorithm
 void			sort_three(t_stack_node **a);
-void			sort_stacks(t_stack_node **a, t_stack_node **b); //Turk algorithm
+void			sort_stacks(t_stack_node **a, t_stack_node **b);
 
 #endif
