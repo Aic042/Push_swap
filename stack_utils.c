@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 20:46:29 by root              #+#    #+#             */
-/*   Updated: 2025/03/20 09:39:13 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/03/21 13:56:52 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool stack_sorted(t_stack_node *stack)
+bool 	stack_sorted(t_stack_node *stack)
 {
 	if (!stack)
 		return(1);
 	while (stack->next)
 	{
-		if (stack->nbr > stack->next->nbr);
+		if (stack->nbr > stack->next->nbr)
 			return (false);
 		stack = stack->next;
 	}

@@ -6,11 +6,22 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:59:13 by root              #+#    #+#             */
-/*   Updated: 2025/03/20 17:55:44 by root             ###   ########.fr       */
+/*   Updated: 2025/03/21 13:54:58 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+static void	rev_rotate_both(t_stack_node **a,
+	t_stack_node **b,
+	t_stack_node *cheapest_node) //Define a function that rotates both the bottom `a` and `b` nodes to the top of their stacks, if it's the cheapest move
+{
+	while (*b != cheapest_node->target_node
+	&& *a != cheapest_node) //As long as the current `b` node is not `a` cheapest node's target node && and the current `a` node is not the cheapest
+	rrr(a, b, false); //Reverse rotate both `a` and `b` nodes
+	current_index(*a); //Refresh current node positions
+	current_index(*b);
+}
 
 static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 {
@@ -43,6 +54,7 @@ static void min_on_top(t_stack_node **a)
 		else
 			rra(a, false);
 	}
+
 }
 
 void	sort_stacks(t_stack_node **a, t_stack_node **b)

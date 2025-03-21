@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:10:06 by aingunza          #+#    #+#             */
-/*   Updated: 2025/03/20 18:08:22 by root             ###   ########.fr       */
+/*   Updated: 2025/03/21 13:54:23 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void			rrb(t_stack_node **b, bool print);
 void			rrr(t_stack_node **a, t_stack_node **b, bool print);
 void			pa(t_stack_node **a, t_stack_node **b, bool print);
 void			pb(t_stack_node **b, t_stack_node **a, bool print);
+void			rotate_both(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest_node);
 
 //***Algorithm
 void			sort_three(t_stack_node **a);

@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:52:48 by root              #+#    #+#             */
-/*   Updated: 2025/03/20 18:11:47 by root             ###   ########.fr       */
+/*   Updated: 2025/03/21 14:05:04 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	{
 		if (error_syntax(argv[i]))
 			free_errors(a);
-		n = ft_atol(argv[i]);
+		n = ft_atoi(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			free_errors(a);
 		append_none(a, (int)n);
