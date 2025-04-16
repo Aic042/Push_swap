@@ -6,12 +6,11 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:52:48 by root              #+#    #+#             */
-/*   Updated: 2025/03/21 14:05:04 by root             ###   ########.fr       */
+/*   Updated: 2025/04/06 14:49:53 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 static void	append_none(t_stack_node **stack, int n)
 {
@@ -75,4 +74,20 @@ void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name
 				rrb(stack, false);
 		}
 	}
+}
+int error_syntax(char *str_n)
+{
+    int i = 0;
+
+    if (!str_n || !str_n[0])
+        return (1); // Error: empty string
+    if (str_n[0] == '-' || str_n[0] == '+')
+        i++;
+    while (str_n[i])
+    {
+        if (!ft_isdigit(str_n[i]))
+            return (1); // Error: non-digit found
+        i++;
+    }
+    return (0); // No error
 }

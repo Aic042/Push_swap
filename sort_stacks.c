@@ -6,11 +6,11 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:59:13 by root              #+#    #+#             */
-/*   Updated: 2025/03/21 13:54:58 by root             ###   ########.fr       */
+/*   Updated: 2025/04/13 12:32:18 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 static void	rev_rotate_both(t_stack_node **a,
 	t_stack_node **b,
@@ -115,3 +115,17 @@ void	init_nodes_b(t_stack_node *a, t_stack_node *b)
 	current_index(b);
 	set_target_b(a, b);
 }
+t_stack_node *get_cheapest(t_stack_node *stack)
+{
+    if (!stack)
+        return (NULL);
+    while (stack)
+    {
+        if (stack->cheapest)
+            return (stack);
+        stack = stack->next;
+    }
+    return (NULL); // Fallback, though ideally set_cheapest ensures a cheapest node
+}
+
+static void

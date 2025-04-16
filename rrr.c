@@ -1,6 +1,6 @@
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   rrr.c                                              :+:      :+:    :+:   */
@@ -12,7 +12,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 static void	rotate(t_stack_node **stack) //Define a function that rotates the stack's top node to the bottom of the stack
 {
@@ -56,4 +56,47 @@ void	rotate_both(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest_node
 		rr(a, b, false);
 	current_index(*a);
 	current_index(*b);
+}
+void rra(t_stack_node **a, bool print)
+{
+    t_stack_node *last;
+    t_stack_node *second_last;
+
+    if (!*a || !(*a)->next)
+        return;
+    last = find_last(*a);
+    second_last = last->prev;
+    last->next = *a;
+    last->prev = NULL;
+    second_last->next = NULL;
+    (*a)->prev = last;
+    *a = last;
+    if (!print)
+        ft_printf("rra\n");
+}
+
+void rrr(t_stack_node **a, t_stack_node **b, bool print)
+{
+    rra(a, true); // Pass true to suppress individual prints
+    rrb(b, true);
+    if (!print)
+        ft_printf("rrr\n");
+}
+
+void rrb(t_stack_node **b, bool print)
+{
+    t_stack_node *last;
+    t_stack_node *second_last;
+
+    if (!*b || !(*b)->next)
+        return;
+    last = find_last(*b);
+    second_last = last->prev;
+    last->next = *b;
+    last->prev = NULL;
+    second_last->next = NULL;
+    (*b)->prev = last;
+    *b = last;
+    if (!print)
+        ft_printf("rrb\n");
 }
