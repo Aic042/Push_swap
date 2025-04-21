@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 09:22:21 by aingunza          #+#    #+#             */
-/*   Updated: 2025/04/13 12:24:41 by root             ###   ########.fr       */
+/*   Updated: 2025/04/16 10:33:38 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void argscheckers(int argc, char **argv)
         i++;
     }
 }
+
 // int main(int argc, char **argv)
 // {
 // 	argscheckers(argc, argv);

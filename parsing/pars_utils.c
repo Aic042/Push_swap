@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   pars_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 08:04:52 by root              #+#    #+#             */
-/*   Updated: 2025/04/16 08:27:29 by root             ###   ########.fr       */
+/*   Updated: 2025/04/16 10:48:49 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft/libft.h"
 
 int	check_dups(int *num_array, int size)
 {
@@ -68,3 +68,7 @@ void	free_split(char **split)
 		free(split[i++]);
 	free(split);
 }
+ int main(int argc,char **argv)
+ {
+	
+ }
