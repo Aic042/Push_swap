@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 08:04:52 by root              #+#    #+#             */
-/*   Updated: 2025/04/16 10:48:49 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/04/25 07:26:36 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,31 +32,26 @@ int	check_dups(int *num_array, int size)
 	return (0);
 }
 
-char	*join_args(int argc, char **argv)
+void	free_split(char **split)
 {
-	char	*joined;
-	char	*tmp;
-	int		i;
+	int	i;
 
-	joined = ft_strdup("");
-	if (!joined)
-		return(NULL);
-	i = 1;
-	while (i < argc)
-	{
-		tmp = ft_strjoin(joined, argv[i]);
-		free(joined);
-		if (!tmp)
-			return (NULL);
-		joined = tmp;
-		tmp = ft_strjoin(joined, " ");
-		free(joined);
-		if (!tmp)
-			return (NULL);
-		joined = tmp;
-		i++;
-	}
-	return (joined);
+	i = 0;
+	while (split[i])
+		free(split[i++]);
+	free(split);
+}
+int is_nbr(char *str)
+{
+	int i;
+	
+	if (!str || !*str)
+		return (0);
+	if (str[0])
+	if (!*str)
+		return (0);
+	while (ft_isdigit(str[1]))
+		return (0);
 }
 
 void	free_split(char **split)
@@ -68,7 +63,3 @@ void	free_split(char **split)
 		free(split[i++]);
 	free(split);
 }
- int main(int argc,char **argv)
- {
-	
- }
