@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 20:46:29 by root              #+#    #+#             */
-/*   Updated: 2025/04/06 14:48:43 by root             ###   ########.fr       */
+/*   Updated: 2025/04/25 12:14:47 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ t_stack_node *find_min(t_stack_node *stack)
 	}
 	return(min_node);
 }
-int stack_len(t_stack_node *stack)
+int	stack_len(t_stack_node *stack)
 {
-    int len = 0;
+    int	len = 0;
     while (stack)
     {
         len++;

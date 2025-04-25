@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg_joirner.c                                      :+:      :+:    :+:   */
+/*   arg_joiner.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 07:23:55 by root              #+#    #+#             */
-/*   Updated: 2025/04/25 07:24:11 by root             ###   ########.fr       */
+/*   Updated: 2025/04/25 12:17:53 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*join_args(int argc, char **argv)
 
 	joined = ft_strdup("");
 	if (!joined)
-		return(NULL);
+		return (NULL);
 	i = 1;
 	while (i < argc)
 	{

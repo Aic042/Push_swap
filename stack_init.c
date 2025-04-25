@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:52:48 by root              #+#    #+#             */
-/*   Updated: 2025/04/06 14:49:53 by root             ###   ########.fr       */
+/*   Updated: 2025/04/25 12:14:47 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	append_none(t_stack_node **stack, int n)
+static void	append_none(t_stack_node **stack, int	n)
 {
 	t_stack_node	*node;
 	t_stack_node	*last_node;
@@ -75,9 +75,9 @@ void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name
 		}
 	}
 }
-int error_syntax(char *str_n)
+int	error_syntax(char *str_n)
 {
-    int i = 0;
+    int	i = 0;
 
     if (!str_n || !str_n[0])
         return (1); // Error: empty string

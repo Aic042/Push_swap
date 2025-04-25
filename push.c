@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 09:22:21 by aingunza          #+#    #+#             */
-/*   Updated: 2025/04/16 10:33:38 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/04/25 12:16:09 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,32 +50,7 @@ void	pb(t_stack_node **a, t_stack_node **b, bool print)
 		ft_printf("pb");
 }
 
-void argscheckers(int argc, char **argv)
-{
-    int i;
-    int j;
-
-	i = 1;
-    if (argc == 1)
-    {
-        exit(1);
-    }
-    while (i < argc)
-    {
-        j = 0;
-        while (argv[i][j] != '\0')
-        {
-            if (!isdigit(argv[i][j]))
-            {
-                exit(1); 
-            }
-            j++;
-        }
-        i++;
-    }
-}
-
-// int main(int argc, char **argv)
+// int	main(int argc, char **argv)
 // {
 // 	argscheckers(argc, argv);
 // 	printf("All arguments are valid numbers!\n");

@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 11:06:26 by aingunza          #+#    #+#             */
-/*   Updated: 2025/03/10 18:10:23 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/04/25 12:14:47 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*ft_line(char *buffer)
 	return (line);
 }
 
-char	*read_file(int fd, char *res)
+char	*read_file(int	fd, char *res)
 {
 	char	*buffer;
 	int		byte_read;
@@ -97,7 +97,7 @@ char	*read_file(int fd, char *res)
 	return (res);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int	fd)
 {
 	static char	*buffer;
 	char		*line;

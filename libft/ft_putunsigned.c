@@ -6,13 +6,13 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 12:50:04 by aingunza          #+#    #+#             */
-/*   Updated: 2025/03/10 18:11:18 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/04/25 12:14:47 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count(unsigned int nb)
+static int	count(unsigned int	nb)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ static int	count(unsigned int nb)
 	return (i);
 }
 
-int	ft_putunsigned(unsigned int nb)
+int	ft_putunsigned(unsigned int	nb)
 {
 	if (nb <= 9)
 		ft_putchar(nb + 48);

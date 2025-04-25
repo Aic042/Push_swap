@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:10:06 by aingunza          #+#    #+#             */
-/*   Updated: 2025/03/21 13:54:23 by root             ###   ########.fr       */
+/*   Updated: 2025/04/25 12:16:09 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include "libft/libft.h"
 
 # define ERR_MESSAGE "Error: Nah, this thing ain't working. \n"
-# define ERR_NO_INT "Error:Check those args please. \n"
+# define ERR_NO_int	"Error:Check those args please. \n"
 # define ERR_BIG_NUM "Error: There has to be some big number. \n"
 # define ERR_DUPLI "Error: Duplicate numbers. I repeat, duplicate numbers. 🦜\n"
 
@@ -38,7 +38,7 @@ typedef struct s_stack_node
 }	t_stack_node;
 
 int				error_syntax(char *str_n);
-int				error_duplicate(t_stack_node *a, int n);
+int				error_duplicate(t_stack_node *a, int	n);
 void			free_stack(t_stack_node **stack);
 void			free_errors(t_stack_node **a);
 
@@ -78,5 +78,9 @@ void			rotate_both(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest_no
 //***Algorithm
 void			sort_three(t_stack_node **a);
 void			sort_stacks(t_stack_node **a, t_stack_node **b);
+
+//*Le Parsing */
+char	*join_args(int argc, char **argv);
+int	parse_args(int argc, char **argv);
 
 #endif

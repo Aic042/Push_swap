@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:25:10 by aingunza          #+#    #+#             */
-/*   Updated: 2024/07/04 14:25:12 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/04/25 12:14:47 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_initiate_vars(size_t *i, int *j, int *s_word)
+static void	ft_initiate_vars(size_t *i, int	*j, int	*s_word)
 {
 	*i = 0;
 	*j = 0;
 	*s_word = -1;
 }
 
-static void	*ft_free(char **strs, int count)
+static void	*ft_free(char **strs, int	count)
 {
 	int	i;
 
@@ -33,7 +33,7 @@ static void	*ft_free(char **strs, int count)
 	return (NULL);
 }
 
-static char	*fill_word(const char *str, int start, int end)
+static char	*fill_word(const char *str, int	start, int	end)
 {
 	char	*word;
 	int		i;

@@ -2,8 +2,8 @@
 
 void	current_index(t_stack_node *stack)
 {
-	int i;
-	int median;
+	int	i;
+	int	median;
 
 	i = 0;
 	
