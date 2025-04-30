@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:59:13 by root              #+#    #+#             */
-/*   Updated: 2025/04/25 10:11:29 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/04/27 20:00:29 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,20 @@ static void	rev_rotate_both(t_stack_node **a,
 	current_index(*b);
 }
 
-static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
+static void move_a_to_b(t_stack_node **a, t_stack_node **b)
 {
-	t_stack_node	*cheapest_node;
+    t_stack_node *cheapest_node;
 
-	cheapest_node = get_cheapest(*a);
-	if (cheapest_node->above_median
-		&& cheapest_node->target_node->above_median)
-		rotate_both(a, b, cheapest_node);
-	else if (!(cheapest_node->target_node->above_median)
-		&& !(cheapest_node->target_node->above_median))
-		rev_rotate_both(a, b, cheapest_node);
-	prep_for_push(a, cheapest_node, 'a');
-	prep_for_push(b, cheapest_node->target_node, 'b');
-	pb(b, a, false);
+    cheapest_node = get_cheapest(*a);
+    if (!cheapest_node || !cheapest_node->target_node)
+        return; // Prevent segfault if no valid cheapest node or target
+    if (cheapest_node->above_median && cheapest_node->target_node->above_median)
+        rotate_both(a, b, cheapest_node);
+    else if (!cheapest_node->above_median && !cheapest_node->target_node->above_median)
+        rev_rotate_both(a, b, cheapest_node);
+    prep_for_push(a, cheapest_node, 'a');
+    prep_for_push(b, cheapest_node->target_node, 'b');
+    pb(b, a, false);
 }
 
 static void	move_b_to_a(t_stack_node **a, t_stack_node **b)
@@ -127,5 +127,3 @@ t_stack_node *get_cheapest(t_stack_node *stack)
     }
     return (NULL); // Fallback, though ideally set_cheapest ensures a cheapest node
 }
-
-static void

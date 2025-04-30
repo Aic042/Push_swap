@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 09:22:21 by aingunza          #+#    #+#             */
-/*   Updated: 2025/04/25 12:16:09 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/04/27 19:46:18 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,18 @@ static void	push(t_stack_node **dst, t_stack_node **src)
 	}
 }
 
-void	pa(t_stack_node **a, t_stack_node **b, bool print)
+void pa(t_stack_node **a, t_stack_node **b, bool print)
 {
-	push(a, b);
-	if (!print)
-		ft_printf("pa");
+    push(a, b);
+    if (!print)
+        ft_printf("pa\n");
 }
 
-void	pb(t_stack_node **a, t_stack_node **b, bool print)
+void pb(t_stack_node **a, t_stack_node **b, bool print)
 {
-	push(b, a);
-	if (!print)
-		ft_printf("pb");
+    push(b, a);
+    if (!print)
+        ft_printf("pb\n");
 }
 
 // int	main(int argc, char **argv)

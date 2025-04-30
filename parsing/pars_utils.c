@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 08:04:52 by root              #+#    #+#             */
-/*   Updated: 2025/04/25 12:18:59 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:56:34 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,13 @@ int	parse_args(int argc, char **argv)
 	int		*numbers;
 	int		i;
 
+	numbers = malloc(sizeof(int) * i);
+	if (!numbers)
+	{
+		free_split(split);
+		return (0);
+	}
+
 	joined = join_args(argc, argv);
 	if (!joined)
 		return (0);
@@ -88,4 +95,16 @@ int	parse_args(int argc, char **argv)
 		free(split[i++]);
 	free(split);
 	return (!check_dups(numbers, i) && (free(numbers), 1));
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc < 2)
+		return (1);
+	if (!parse_args(argc, argv))
+	{
+		write(1, "Error with the parsing", 23);
+		return (1);
+	}
+	return (0);
 }

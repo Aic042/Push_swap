@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_joiner.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 07:23:55 by root              #+#    #+#             */
-/*   Updated: 2025/04/25 12:17:53 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:44:29 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*join_args(int argc, char **argv)
 {
 	char	*joined;
 	char	*tmp;
-	int		i;
+	int			i;
 
 	joined = ft_strdup("");
 	if (!joined)

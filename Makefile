@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
+#    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 21:01:27 by root              #+#    #+#              #
-#    Updated: 2025/04/25 10:10:33 by aingunza         ###   ########.fr        #
+#    Updated: 2025/04/27 20:04:58 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ fun_msg:
 
 $(NAME): $(OBJS)
 	@echo "$(GREEN)🔗 Linking $(NAME)...$(RESET)"
-	cc $(OBJS) -L$(LIBFT) -lft
+	cc $(OBJS) -o $(NAME) $(LIBS)
+
 
 clean:
 	@echo "$(YELLOW)🧹 Cleaning object files...$(RESET)"

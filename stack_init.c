@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:52:48 by root              #+#    #+#             */
-/*   Updated: 2025/04/25 12:14:47 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/04/27 19:44:16 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,35 @@ static void	append_none(t_stack_node **stack, int	n)
 		node->prev = last_node;
 	}
 }
-
-void	init_stack_a(t_stack_node **a, char **argv)
+int error_duplicate(t_stack_node *stack, int n)
 {
-	long n;
-	long i;
-	
-	i = 0;
-	while (argv[i])
-	{
-		if (error_syntax(argv[i]))
-			free_errors(a);
-		n = ft_atoi(argv[i]);
-		if (n > INT_MAX || n < INT_MIN)
-			free_errors(a);
-		append_none(a, (int)n);
-		i++;
-	}
+    while (stack)
+    {
+        if (stack->nbr == n)
+            return (1);
+        stack = stack->next;
+    }
+    return (0);
+}
+
+void init_stack_a(t_stack_node **a, char **argv)
+{
+    long n;
+    long i;
+
+    i = 0;
+    while (argv[i])
+    {
+        if (error_syntax(argv[i]))
+            free_errors(a);
+        n = ft_atoi(argv[i]);
+        if (n > INT_MAX || n < INT_MIN)
+            free_errors(a);
+        if (error_duplicate(*a, (int)n))
+            free_errors(a);
+        append_none(a, (int)n);
+        i++;
+    }
 }
 
 void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name)

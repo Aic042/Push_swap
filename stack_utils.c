@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 20:46:29 by root              #+#    #+#             */
-/*   Updated: 2025/04/25 12:14:47 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/04/27 19:40:50 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,28 @@ t_stack_node *find_last(t_stack_node *stack)
     return (stack);
 }
 
+/* ... other includes and functions ... */
+
+t_stack_node *find_max(t_stack_node *stack)
+{
+    long max = LONG_MIN;
+    t_stack_node *max_node = NULL;
+
+    if (!stack)
+        return (NULL);
+    while (stack)
+    {
+        if (stack->nbr > max)
+        {
+            max = stack->nbr;
+            max_node = stack;
+        }
+        stack = stack->next;
+    }
+    return (max_node);
+}
+
+/* ... other functions like find_min, stack_len, etc. ... */
 void free_errors(t_stack_node **a)
 {
     free_stack(a);
