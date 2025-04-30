@@ -3,13 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   pars_args.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 10:10:00 by aingunza          #+#    #+#             */
-/*   Updated: 2025/04/29 14:13:06 by root             ###   ########.fr       */
+/*   Updated: 2025/04/30 11:07:39 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+// #include "push_swap.h"
 
+// void free_split(char **split)
+// {
+// 	int	i;
 
+// 	i = 0;
+// 	while (split[i])
+// 	{
+// 		free(split[i]);
+// 		i++;
+// 	}
+// 	free(split);
+// }
