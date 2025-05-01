@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 08:04:52 by root              #+#    #+#             */
-/*   Updated: 2025/04/30 11:14:49 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/01 12:23:57 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	free_split(char **split)
 	free(split);
 }
 
-int	is_nbr(char *str)
+int	is_numr(char *str)
 {
 	int	i;
 
@@ -80,7 +80,7 @@ int	parse_args(int argc, char **argv)
 	if (!split)
 		return (0);
 	i = 0;
-	while (split[i] && is_nbr(split[i]))
+	while (split[i] && is_numr(split[i]))
 		i++;
 	if (split[i])
 		return (free_split(split), 0);

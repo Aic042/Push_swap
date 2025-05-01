@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:11:08 by root              #+#    #+#             */
-/*   Updated: 2025/04/30 15:17:55 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/01 12:23:57 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,18 @@ typedef struct s_stack
 int		*arg_parse(int argc, char **argv, int length);
 int		check_dups(int *num_array, int size);
 void	free_split(char **split);
-int		is_nbr(char *str);
+int		is_numr(char *str);
 int		parse_args(int argc, char **argv);
 char	*join_args(int argc, char **argv);
 
 /////////////////// STACK /////////////////////////
-
-void	stack_starter(t_stack *stack_a, t_stack *stack_b, int *nb, int count);
+void variable_initializer(t_stack *stack_a, t_stack *stack_b, int *num, int count);
+void	stack_starter(t_stack *stack_a, t_stack *stack_b, int *num, int count);
 void	stack_pusher(t_stack *stack, int index, int value);
 void	stack_eraser(t_stack *stack);
 
 ///////////////// SORTING ////////////////////////
-void	sort(t_stack *stack_a, t_stack *stack_b, int *nb_str, int len);
+void	sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len);
 int		check_sorted(t_stack *stack);
 
 /////////////// MISCELLANEOUS //////////////
