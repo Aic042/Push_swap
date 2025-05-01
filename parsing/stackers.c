@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:13:10 by root              #+#    #+#             */
-/*   Updated: 2025/05/01 15:31:37 by root             ###   ########.fr       */
+/*   Updated: 2025/05/01 22:13:16 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,36 @@ void variable_initializer(t_stack *stack_a, t_stack *stack_b, int *num, int coun
 	stack_a->size = 0;
 	stack_b->head = NULL;
 	stack_b->size = 0;
+}
+
+void sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len)
+{
+	int i;
+	int size;
+
+	i = 0;
+	size = (len / 10) * 14;
+	while (stack_a->head)
+	{
+		if (stack_a->head->s_index <= i)
+		{
+			push(stack_b, stack_a, 'b', 1);
+			rotate(stack_b, 'b', 1);
+			i++;
+		}
+		else if (stack_a->head->s_index <= i + size)
+		{
+			push(stack_b, stack_a, 'b', 1);
+			i++;
+		}
+		else
+		{
+			rotate(stack_a, 'a', 1);
+		}
+	}
+	sorter2(stack_a, stack_b, len);
+	stack_eraser(stack_b);
+	stack_eraser(stack_a);
 }
 
 void	sort1(t_stack *stack_a, t_stack *stack_b, int len)
