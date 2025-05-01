@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:11:08 by root              #+#    #+#             */
-/*   Updated: 2025/05/01 12:23:57 by root             ###   ########.fr       */
+/*   Updated: 2025/05/01 13:15:00 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		parse_args(int argc, char **argv);
 char	*join_args(int argc, char **argv);
 
 /////////////////// STACK /////////////////////////
-void variable_initializer(t_stack *stack_a, t_stack *stack_b, int *num, int count);
+void 	variable_initializer(t_stack *stack_a, t_stack *stack_b, int *num, int count);
 void	stack_starter(t_stack *stack_a, t_stack *stack_b, int *num, int count);
 void	stack_pusher(t_stack *stack, int index, int value);
 void	stack_eraser(t_stack *stack);
@@ -52,5 +52,11 @@ int		check_sorted(t_stack *stack);
 int		counter(t_node *stack, int i);
 int		get_min(t_node *stack);
 void	stack_inner_freer(t_stack *stack);
+void	swap(t_stack *stack, char x, bool b);
+void	push(t_stack *stack1, t_stack *stack2, char x, bool b);
+void	rotate(t_stack *stack, char x, bool b);
+void	reverse_rotate(t_stack *stack, char x, bool b);
+
+
 
 #endif
