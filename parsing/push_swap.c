@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:21:55 by root              #+#    #+#             */
-/*   Updated: 2025/05/01 22:25:52 by root             ###   ########.fr       */
+/*   Updated: 2025/05/02 12:15:47 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int main(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
 	variable_initializer(stack_a, stack_b, num, count);
 	sort(stack_a, stack_b, num, count);
 	check_sorted(stack_a);
-	check_sorted(stack_b);
+	// check_sorted(stack_b); Nevermind, we don't need to check stack_b
 	return (0);
 }
