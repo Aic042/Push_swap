@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:07:15 by root              #+#    #+#             */
-/*   Updated: 2025/05/03 14:14:00 by root             ###   ########.fr       */
+/*   Updated: 2025/05/04 11:33:10 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,18 @@ if (!stack->head || !stack->head->next)
 
 void	push(t_stack *stack1, t_stack *stack2, char x, bool b)
 {
-	t_node	*tmp;
-
-	if (!stack1->head)
+	int i;
+	
+	if(stack2->head == NULL)
 	{
-
 		return;
-	}
-	tmp = stack1->head;
-	stack1->head = tmp->next;
-	tmp->next = stack2->head;
-	stack2->head = tmp;
+	}	
+	i = stack2->head->s_index;
+	stack_head_placer(stack1, i, stack_head_taker(stack2));
 	if (b)
+	{
 		ft_printf("p%c\n", x);
+	}
 }
 
 void	rotate(t_stack *stack, char x, bool b)

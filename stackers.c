@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:13:10 by root              #+#    #+#             */
-/*   Updated: 2025/05/03 13:57:33 by root             ###   ########.fr       */
+/*   Updated: 2025/05/04 11:49:33 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	simple_sorter(t_stack *stack, int len)
 		else
 			reverse_rotate(stack, 'a', 1);
 	}
+	else
 	{
 		swap(stack, 'a', 1);
 		if (check_sorted(stack))
@@ -99,7 +100,7 @@ void	sort1(t_stack *stack_a, t_stack *stack_b, int len) //k_sort1
 	int size;
 	
 	i = 0;
-	size = (len / 10) * 14;
+	size = len / 5; // Ajustable
 	while (stack_a->head)
 	{
 		if (stack_a->head->s_index <= i)
