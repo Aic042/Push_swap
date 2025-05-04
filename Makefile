@@ -6,13 +6,13 @@
 #    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 21:01:27 by root              #+#    #+#              #
-#    Updated: 2025/04/27 20:04:58 by root             ###   ########.fr        #
+#    Updated: 2025/05/02 16:39:43 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME    = push_swap
 
-LIBFT = ./libft
+LIBFT = libft
 CFLAGS = -Wextra -Wall -Werror -Ofast -g
 HEADERS := -I ./include -I $(LIBFT)/include
 LIBS = -L$(LIBFT) -lft

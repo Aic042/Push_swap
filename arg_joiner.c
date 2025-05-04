@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   arg_joiner.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 07:23:55 by root              #+#    #+#             */
-/*   Updated: 2025/04/30 11:04:06 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/02 20:43:42 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 char	*join_args(int argc, char **argv)
 {

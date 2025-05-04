@@ -6,11 +6,11 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 08:04:52 by root              #+#    #+#             */
-/*   Updated: 2025/05/01 12:23:57 by root             ###   ########.fr       */
+/*   Updated: 2025/05/02 16:59:07 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	check_dups(int *num_array, int size)
 {
@@ -62,16 +62,22 @@ int	is_numr(char *str)
 	return (1);
 }
 
-int	parse_args(int argc, char **argv)
+static int	count_args(char **split)
+{
+	int	count;
+
+	count = 0;
+	while (split[count])
+		count++;
+	return (count);
+}
+
+int	parse_args(int argc, char **argv, int **num_array, int *count)
 {
 	char	*joined;
 	char	**split;
-	int		*numbers;
 	int		i;
 
-	numbers = malloc(sizeof(int) * i);
-	if (!numbers)
-		return (free_split(split), 0);
 	joined = join_args(argc, argv);
 	if (!joined)
 		return (0);
@@ -79,17 +85,53 @@ int	parse_args(int argc, char **argv)
 	free(joined);
 	if (!split)
 		return (0);
-	i = 0;
-	while (split[i] && is_numr(split[i]))
-		i++;
-	if (split[i])
+	*count = count_args(split);
+	*num_array = malloc(sizeof(int) * (*count));
+	if (!*num_array)
 		return (free_split(split), 0);
-	while (--i >= 0)
-		numbers[i] = ft_atoi(split[i]);
 	i = 0;
-	while (split[i])
-		free(split[i++]);
-	free(split);
-	return (!check_dups(numbers, i) && (free(numbers), 1));
+	while (i < *count)
+	{
+		if (!is_numr(split[i]) || ft_atoi(split[i]) > INT_MAX
+			|| ft_atoi(split[i]) < INT_MIN)
+			return (free_split(split), free(*num_array), 0);
+		(*num_array)[i] = ft_atoi(split[i]);
+		i++;
+	}
+	return (free_split(split), !check_dups(*num_array, *count));
 }
+
+// Prototype V1.0
+// int	parse_args(int argc, char **argv)
+// {
+// 	char	*joined;
+// 	char	**split;
+// 	int		*numbers;
+// 	int		i;
+// 	i = 0;
+
+// 	numbers = malloc(sizeof(int));
+// 	if (!numbers)
+// 		exit (1);
+// 	// return (free_split(split), 0);
+// 	joined = join_args(argc, argv);
+// 	if (!joined)
+// 		return (0);
+// 	split = ft_split(joined, ' ');
+// 	free(joined);
+// 	if (!split)
+// 		exit (1);
+// 	i = 0;
+// 	while (split[i] && is_numr(split[i]))
+// 		i++;
+// 	if (split[i])
+// 		return (free_split(split), 0);
+// 	while (--i >= 0)
+// 		numbers[i] = ft_atoi(split[i]);
+// 	i = 0;
+// 	while (split[i])
+// 		free(split[i++]);
+// 	free(split);
+// 	return (!check_dups(numbers, i) && (free(numbers), 1));
+// }
 

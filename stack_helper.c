@@ -3,29 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   stack_helper.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 13:03:56 by aingunza          #+#    #+#             */
-/*   Updated: 2025/04/30 15:24:48 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/04 10:40:42 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stack_head_placer(t_stack *stack, int index, int value)
+void    stack_head_placer(t_stack *stack, int index, int value)
 {
-	t_node	*tmp;
-	int i;
-	
-	i = 0;
-	tmp = malloc(sizeof(int));
-	if(!tmp)
-		return;
-	tmp = value;
-	i = index;
-	tmp->next = stack->head;
-	stack->head = tmp;
-	stack->size++;
+    t_node *tmp;
+
+    tmp = malloc(sizeof(t_node));
+    if (!tmp)
+    {
+        ft_printf("Error: Memory allocation failed\n");
+        exit(1);
+    }
+    tmp->value = value;
+    tmp->s_index = index;
+    tmp->next = stack->head;
+    stack->head = tmp;
+    stack->size++;
 }
 
 // Function push_stack(stack, index, data):
@@ -38,22 +39,23 @@ void	stack_head_placer(t_stack *stack, int index, int value)
 //     Update the stack's head to point to tmp
 //     Increment the stack's size
 
-int	stack_head_taker(t_stack *stack)
+int     stack_head_taker(t_stack *stack)
 {
-	t_node	*top;
-	int	value;
-	
-	if(stack->head == NULL)
-	{
-		write(1, "head is null", 12);
-		exit (1);
-	}
-	top = stack->head;
-	value = top->value;
-	stack->head = top->next;
-	free (top);
-	stack->size--;
-	return (value);
+    t_node  *top;
+    int     value;
+
+    if (!stack->head)
+    {
+        ft_printf("Error: Memory allocation failed\n");
+        exit(1);
+		
+    }
+    top = stack->head;
+    value = top->value;
+    stack->head = top->next;
+    free(top);
+    stack->size--;
+    return (value);
 }
 
 /*
