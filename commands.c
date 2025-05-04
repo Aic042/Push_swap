@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:07:15 by root              #+#    #+#             */
-/*   Updated: 2025/05/04 11:33:10 by root             ###   ########.fr       */
+/*   Updated: 2025/05/04 12:29:15 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@ void	swap(t_stack *stack, char x, bool b)
 {
 	t_node	*tmp;
 
-if (!stack->head || !stack->head->next)
-{
-	ft_printf("Error\n");
-	return;
-}
+	if (!stack->head || !stack->head->next)
+	{
+		return;
+	}
 	tmp = stack->head;
 	stack->head = tmp->next;
 	tmp->next = stack->head->next;
@@ -50,11 +49,10 @@ void	rotate(t_stack *stack, char x, bool b)
 	t_node	*tmp;
 	t_node	*last;
 
-if (!stack->head || !stack->head->next)
-{
-	ft_printf("Error\n");
-	return;
-}
+	if (!stack->head || !stack->head->next)
+	{
+		return;
+	}
 	tmp = stack->head;
 	stack->head = tmp->next;
 	last = stack->head;
@@ -71,11 +69,10 @@ void	reverse_rotate(t_stack *stack, char x, bool b)
 	t_node	*tmp;
 	t_node	*last;
 
-if (!stack->head || !stack->head->next)
-{
-	ft_printf("Error\n");
-	return;
-}
+	if (!stack->head || !stack->head->next)
+	{
+		return;
+	}
 	tmp = stack->head;
 	while (tmp->next->next)
 		tmp = tmp->next;

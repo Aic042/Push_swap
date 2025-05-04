@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 13:03:56 by aingunza          #+#    #+#             */
-/*   Updated: 2025/05/04 11:37:52 by root             ###   ########.fr       */
+/*   Updated: 2025/05/04 12:15:37 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void    stack_head_placer(t_stack *stack, int index, int value)
     tmp = malloc(sizeof(t_node));
     if (!tmp)
     {
-		ft_printf("Error: Cannot pop from an empty stack\n");
         exit(1);
     }
     tmp->value = value;
@@ -46,9 +45,7 @@ int     stack_head_taker(t_stack *stack)
 
     if (!stack->head)
     {
-		ft_printf("Error: Cannot take from an empty stack\n");
         exit(1);
-		
     }
     top = stack->head;
     value = top->value;

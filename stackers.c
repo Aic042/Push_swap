@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:13:10 by root              #+#    #+#             */
-/*   Updated: 2025/05/04 11:49:33 by root             ###   ########.fr       */
+/*   Updated: 2025/05/04 12:05:57 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,6 @@ int	check_rot_sort(t_stack *stack , int min_index)
 	else if (c < a && a < b)
 		return (1);
 	return (0);
-}
-
-void	variable_initializer(t_stack *stack_a, t_stack *stack_b)
-{
-    stack_a->head = NULL;
-    stack_a->size = 0;
-    stack_b->head = NULL;
-    stack_b->size = 0;
 }
 
 void	simple_sorter(t_stack *stack, int len)
@@ -67,31 +59,32 @@ void	simple_sorter(t_stack *stack, int len)
 	}
 }
 
-void sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len) 
+void	s_insertion_sort(t_stack *stack_a, t_stack *stack_b, int length)
 {
-	if (check_sorted(stack_a))
+	int	min_index;
+	int	iter;
+	int	n;
+
+	iter = 0;
+	n = length;
+	while (iter++ < n - 3)
 	{
-		free(num_str);
-		stack_freer(stack_a);
-		ft_printf("OK\n");
+		min_index = get_min(stack_a);
+		if (counter(stack_a->head, min_index) <= stack_a->size / 2)
+			while (stack_a->head->s_index != min_index)
+				rotate(stack_a, 'a', true);
+		else
+			while (stack_a->head->s_index != min_index)
+				reverse_rotate(stack_a, 'a', true);
+		if (check_sorted(stack_a) && stack_b->size == 0)
+			return ;
+		push(stack_b, stack_a, 'b', true);
+		length--;
 	}
-	else if (len == 2)
-	{
-		swap(stack_a, 'a', 1);
-	}
-	else if (len == 3)
-	{
-		simple_sorter(stack_a, len);
-	}
-	else if (len <= 7)
-		s_insertion_sort(stack_a, stack_b, len);
-	else if (len > 7)
-	{
-		sort1(stack_a, stack_b, len);
-		sorter2(stack_a, stack_b, len);
-	}
-	else
-		ft_printf("error_sort\n");
+	simple_sorter(stack_a, length);
+	iter = 0;
+	while (iter++ < n - 3)
+		push(stack_a, stack_b, 'a', true);
 }
 
 void	sort1(t_stack *stack_a, t_stack *stack_b, int len) //k_sort1
@@ -100,6 +93,7 @@ void	sort1(t_stack *stack_a, t_stack *stack_b, int len) //k_sort1
 	int size;
 	
 	i = 0;
+	// range = ft_sqrt(length) * 14 / 10; based
 	size = len / 5; // Ajustable
 	while (stack_a->head)
 	{
@@ -129,8 +123,7 @@ void	sorter2(t_stack *stack_a, t_stack *stack_b, int len)
 	while (len - 1 >= 0)
 	{
 		rb_count = counter(stack_b->head, len - 1);
-		rrb_count = (len + 3) - rb_count; // Adjust for reverse rotations
-
+		rrb_count = len - rb_count;
 		if (rb_count <= rrb_count)
 		{
 			while (stack_b->head->s_index != len - 1)

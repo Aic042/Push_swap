@@ -6,41 +6,13 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:28:04 by root              #+#    #+#             */
-/*   Updated: 2025/05/03 13:56:09 by root             ###   ########.fr       */
+/*   Updated: 2025/05/04 12:06:14 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // In stackers.c
-void	s_insertion_sort(t_stack *stack_a, t_stack *stack_b, int length)
-{
-	int	min_index;
-	int	iter;
-	int	n;
-
-	iter = 0;
-	n = length;
-	while (iter++ < n - 3)
-	{
-		min_index = get_min(stack_a);
-		if (counter(stack_a->head, min_index) <= n - min_index - \
-			counter(stack_a->head, min_index))
-			while (stack_a->head->s_index != min_index)
-				rotate(stack_a, 'a', true);
-		else
-			while (stack_a->head->s_index != min_index)
-				reverse_rotate(stack_a, 'a', true);
-		if (check_sorted(stack_a) && stack_b->size == 0)
-			return ;
-		push(stack_b, stack_a, 'b', true);
-		length--;
-	}
-	simple_sorter(stack_a, length);
-	iter = 0;
-	while (iter++ < n - 3)
-		push(stack_a, stack_b, 'a', true);
-}
 
 int	get_min(t_stack *stack)
 {
@@ -92,4 +64,30 @@ void	stack_freer(t_stack *stack)
 {
 	while (stack)
 		stack_head_taker(stack);
+}
+
+void sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len) 
+{
+	if (check_sorted(stack_a))
+	{
+		free(num_str);
+		stack_freer(stack_a);
+	}
+	else if (len == 2)
+	{
+		swap(stack_a, 'a', 1);
+	}
+	else if (len == 3)
+	{
+		simple_sorter(stack_a, len);
+	}
+	else if (len <= 7)
+		s_insertion_sort(stack_a, stack_b, len);
+	else if (len > 7)
+	{
+		sort1(stack_a, stack_b, len);
+		sorter2(stack_a, stack_b, len);
+	}
+	else
+		ft_printf("error_sort\n");
 }
