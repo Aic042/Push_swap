@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:11:08 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 11:43:24 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:51:59 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		parse_args(int argc, char **argv, int **num_array, int *count);
 char	*join_args(int argc, char **argv);
 
 /////////////////// STACK /////////////////////////
-void 	variable_initializer(t_stack *stack_a, t_stack *stack_b);
+void	variable_initializer(t_stack *stack_a, t_stack *stack_b);
 void	stack_head_placer(t_stack *stack, int index, int value);
 int		stack_head_taker(t_stack *stack);
 void	stack_starter(t_stack *stack_a, t_stack *stack_b, int *num, int count);
@@ -48,10 +48,9 @@ void	stack_freer(t_stack *stack);
 
 ///////////////// SORTING ////////////////////////
 void	sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len);
-void	sort1(t_stack *stack_a, t_stack *stack_b); 
+void	sort1(t_stack *stack_a, t_stack *stack_b);
 void	sorter2(t_stack *stack_a, t_stack *stack_b, int len);
 int		check_sorted(t_stack *stack);
-
 
 /////////////// MISCELLANEOUS //////////////
 int		counter(t_node *stack, int i);

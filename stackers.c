@@ -6,18 +6,18 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:13:10 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 11:51:51 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:49:41 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_rot_sort(t_stack *stack , int min_index)
+int	check_rot_sort(t_stack *stack, int min_index)
 {
-	int a;
-	int b;
-	int c;
-	
+	int	a;
+	int	b;
+	int	c;
+
 	(void)min_index;
 	a = stack->head->value;
 	b = stack->head->next->value;
@@ -35,9 +35,9 @@ void	simple_sorter(t_stack *stack, int len)
 {
 	int	min_index;
 	int	i;
-	
+
 	if (check_sorted(stack))
-		return;
+		return ;
 	min_index = get_min(stack);
 	i = counter(stack->head, min_index);
 	if (check_rot_sort(stack, min_index))
@@ -51,7 +51,7 @@ void	simple_sorter(t_stack *stack, int len)
 	{
 		swap(stack, 'a', 1);
 		if (check_sorted(stack))
-			return;
+			return ;
 		if (i < len - i)
 			rotate(stack, 'a', 1);
 		else
@@ -89,14 +89,13 @@ void	s_insertion_sort(t_stack *stack_a, t_stack *stack_b, int length)
 
 void	sort1(t_stack *stack_a, t_stack *stack_b) //k_sort1
 {
-	int i;
-	int size;
-	
+	int	i;
+	int	size;
+
 	i = 0;
 	// siz = ft_sqrt(length) * 14 / 10; based
-	size = len / 5;
+	//size = size_adjuster(stack_a, 0);
 	// size = 30; // Ajustable
-	
 	while (stack_a->head)
 	{
 		if (stack_a->head->s_index <= i)
@@ -111,9 +110,7 @@ void	sort1(t_stack *stack_a, t_stack *stack_b) //k_sort1
 			i++;
 		}
 		else
-		{
 			rotate(stack_a, 'a', 1);
-		}
 	}
 }
 

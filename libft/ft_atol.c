@@ -6,18 +6,12 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 11:03:21 by aingunza          #+#    #+#             */
-/*   Updated: 2025/05/05 11:04:00 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:38:37 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int	c)
-{
-	if (c == 9 || c == 10 || c == 11 || c == 12 || c == 13 || c == 32)
-		return (1);
-	return (0);
-}
 long	ft_atol(const char *str)
 {
 	long	result;

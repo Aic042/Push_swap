@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aingunza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:18:58 by aingunza          #+#    #+#             */
-/*   Updated: 2025/05/05 11:09:10 by aingunza         ###   ########.fr       */
+/*   Updated: 2024/07/08 12:19:29 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int	c)
+int	ft_isspace(int c)
 {
 	if (c == 9 || c == 10 || c == 11 || c == 12 || c == 13 || c == 32)
 		return (1);

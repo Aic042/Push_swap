@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:28:04 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 11:14:41 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:25:30 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	get_min(t_stack *stack)
 {
-	t_node *current;
+	t_node	*current;
 	int		min_index;
 
 	current = stack->head;
@@ -59,14 +59,13 @@ int	check_sorted(t_stack *stack)
 	return (1);
 }
 
-
 void	stack_freer(t_stack *stack)
 {
 	while (stack->head)
 		stack_head_taker(stack);
 }
 
-void sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len) 
+void	sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len)
 {
 	if (check_sorted(stack_a))
 	{
@@ -85,7 +84,7 @@ void sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len)
 		s_insertion_sort(stack_a, stack_b, len);
 	else if (len > 7)
 	{
-		sort1(stack_a, stack_b, len);
+		sort1(stack_a, stack_b);
 		sorter2(stack_a, stack_b, len);
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:07:15 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 11:19:35 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:23:55 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	swap(t_stack *stack, char x, bool b)
 
 	if (!stack->head || !stack->head->next)
 	{
-		return;
+		return ;
 	}
 	tmp = stack->head;
 	stack->head = tmp->next;
@@ -30,18 +30,14 @@ void	swap(t_stack *stack, char x, bool b)
 
 void	push(t_stack *stack1, t_stack *stack2, char x, bool b)
 {
-	int i;
-	
+	int	i;
+
 	if (stack2->head == NULL)
-	{
-		return;
-	}	
+		return ;
 	i = stack2->head->s_index;
 	stack_head_placer(stack1, i, stack_head_taker(stack2));
 	if (b)
-	{
 		ft_printf("p%c\n", x);
-	}
 }
 
 void	rotate(t_stack *stack, char x, bool b)
@@ -50,9 +46,7 @@ void	rotate(t_stack *stack, char x, bool b)
 	t_node	*last;
 
 	if (!stack->head || !stack->head->next)
-	{
-		return;
-	}
+		return ;
 	tmp = stack->head;
 	stack->head = tmp->next;
 	last = stack->head;
@@ -71,7 +65,7 @@ void	reverse_rotate(t_stack *stack, char x, bool b)
 
 	if (!stack->head || !stack->head->next)
 	{
-		return;
+		return ;
 	}
 	tmp = stack->head;
 	while (tmp->next->next)

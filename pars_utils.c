@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 08:04:52 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 11:08:10 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:19:00 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,4 +134,3 @@ int	parse_args(int argc, char **argv, int **num_array, int *count)
 // 	free(split);
 // 	return (!check_dups(numbers, i) && (free(numbers), 1));
 // }
-

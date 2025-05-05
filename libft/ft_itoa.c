@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aingunza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:25:30 by aingunza          #+#    #+#             */
-/*   Updated: 2025/04/25 12:14:47 by aingunza         ###   ########.fr       */
+/*   Updated: 2024/07/05 09:26:51 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*pre_conv(int	len, int	n)
+static char	*pre_conv(int len, int n)
 {
 	char	*tmp;
 
@@ -43,7 +43,7 @@ static int	int_len(long nbr)
 	return (count);
 }
 
-char	*ft_itoa(int	n)
+char	*ft_itoa(int n)
 {
 	int		len;
 	int		i;

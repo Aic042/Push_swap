@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 12:50:43 by aingunza          #+#    #+#             */
-/*   Updated: 2025/04/25 12:14:47 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/03/10 18:11:18 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	count(long nb)
 	return (i);
 }
 
-int	ft_putnbr(int	nb)
+int	ft_putnbr(int nb)
 {
 	if (nb >= 0 && nb <= 9)
 		ft_putchar(nb + 48);
