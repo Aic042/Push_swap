@@ -3,27 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:21:55 by root              #+#    #+#             */
-/*   Updated: 2025/05/04 12:14:42 by root             ###   ########.fr       */
+/*   Updated: 2025/05/05 11:39:19 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	init_stacks(t_stack *a, t_stack *b, int *arr, int count)
+static void init_stacks(t_stack *a, t_stack *b, int *arr, int count)
 {
-	int	i;
+    int i;
+    int *sorted;
+    int *indices;
 
-	a->head = NULL;
-	a->size = 0;
-	b->head = NULL;
-	b->size = 0;
-	i = count;
-	while (--i >= 0)
-		stack_head_placer(a, 0, arr[i]);
+    a->head = NULL;
+    a->size = 0;
+    b->head = NULL;
+    b->size = 0;
+
+    // Create a sorted copy of arr to assign indices
+    sorted = malloc(sizeof(int) * count);
+    indices = malloc(sizeof(int) * count);
+    if (!sorted || !indices)
+        exit(1);
+    for (i = 0; i < count; i++)
+        sorted[i] = arr[i];
+    // Simple bubble sort for sorted array
+    for (i = 0; i < count - 1; i++)
+        for (int j = 0; j < count - i - 1; j++)
+            if (sorted[j] > sorted[j + 1])
+            {
+                int tmp = sorted[j];
+                sorted[j] = sorted[j + 1];
+                sorted[j + 1] = tmp;
+            }
+    // Assign indices based on sorted positions
+    for (i = 0; i < count; i++)
+        for (int j = 0; j < count; j++)
+            if (arr[i] == sorted[j])
+                indices[i] = j;
+    // Push to stack with correct indices
+    i = count;
+    while (--i >= 0)
+        stack_head_placer(a, indices[i], arr[i]);
+    free(sorted);
+    free(indices);
 }
+//AI made this function. Still trying to find an explanation for why my 4-6 line function has been turned into this monstrosity.
 
 int	main(int argc, char **argv)
 {
@@ -35,7 +63,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	if (!parse_args(argc, argv, &nums, &count))
-		return (ft_printf("Error\n"), 1);
+		return (1);
 	init_stacks(&a, &b, nums, count);
 	if (!check_sorted(&a))
 		sort(&a, &b, nums, count);

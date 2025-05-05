@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 08:04:52 by root              #+#    #+#             */
-/*   Updated: 2025/05/02 16:59:07 by root             ###   ########.fr       */
+/*   Updated: 2025/05/05 11:08:10 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,8 @@ int	parse_args(int argc, char **argv, int **num_array, int *count)
 	i = 0;
 	while (i < *count)
 	{
-		if (!is_numr(split[i]) || ft_atoi(split[i]) > INT_MAX
-			|| ft_atoi(split[i]) < INT_MIN)
+		if (!is_numr(split[i]) || ft_atol(split[i]) > INT_MAX
+			|| ft_atol(split[i]) < INT_MIN)
 			return (free_split(split), free(*num_array), 0);
 		(*num_array)[i] = ft_atoi(split[i]);
 		i++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stackers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:13:10 by root              #+#    #+#             */
-/*   Updated: 2025/05/04 12:05:57 by root             ###   ########.fr       */
+/*   Updated: 2025/05/05 11:51:51 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	simple_sorter(t_stack *stack, int len)
 	int	min_index;
 	int	i;
 	
-	if(check_sorted(stack))
+	if (check_sorted(stack))
 		return;
 	min_index = get_min(stack);
 	i = counter(stack->head, min_index);
@@ -87,14 +87,16 @@ void	s_insertion_sort(t_stack *stack_a, t_stack *stack_b, int length)
 		push(stack_a, stack_b, 'a', true);
 }
 
-void	sort1(t_stack *stack_a, t_stack *stack_b, int len) //k_sort1
+void	sort1(t_stack *stack_a, t_stack *stack_b) //k_sort1
 {
 	int i;
 	int size;
 	
 	i = 0;
-	// range = ft_sqrt(length) * 14 / 10; based
-	size = len / 5; // Ajustable
+	// siz = ft_sqrt(length) * 14 / 10; based
+	size = len / 5;
+	// size = 30; // Ajustable
+	
 	while (stack_a->head)
 	{
 		if (stack_a->head->s_index <= i)

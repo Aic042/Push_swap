@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:11:08 by root              #+#    #+#             */
-/*   Updated: 2025/05/03 13:56:27 by root             ###   ########.fr       */
+/*   Updated: 2025/05/05 11:43:24 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	stack_freer(t_stack *stack);
 
 ///////////////// SORTING ////////////////////////
 void	sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len);
-void	sort1(t_stack *stack_a, t_stack *stack_b, int len); 
+void	sort1(t_stack *stack_a, t_stack *stack_b); 
 void	sorter2(t_stack *stack_a, t_stack *stack_b, int len);
 int		check_sorted(t_stack *stack);
 
@@ -63,5 +63,6 @@ void	swap(t_stack *stack, char x, bool b);
 void	push(t_stack *stack1, t_stack *stack2, char x, bool b);
 void	rotate(t_stack *stack, char x, bool b);
 void	reverse_rotate(t_stack *stack, char x, bool b);
+void	size_adjuster(t_stack *stack, int size);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   commands.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:07:15 by root              #+#    #+#             */
-/*   Updated: 2025/05/04 12:29:15 by root             ###   ########.fr       */
+/*   Updated: 2025/05/05 11:19:35 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	push(t_stack *stack1, t_stack *stack2, char x, bool b)
 {
 	int i;
 	
-	if(stack2->head == NULL)
+	if (stack2->head == NULL)
 	{
 		return;
 	}	

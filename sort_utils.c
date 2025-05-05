@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:28:04 by root              #+#    #+#             */
-/*   Updated: 2025/05/04 12:06:14 by root             ###   ########.fr       */
+/*   Updated: 2025/05/05 11:14:41 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	check_sorted(t_stack *stack)
 
 void	stack_freer(t_stack *stack)
 {
-	while (stack)
+	while (stack->head)
 		stack_head_taker(stack);
 }
 

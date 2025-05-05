@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_joiner.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 07:23:55 by root              #+#    #+#             */
-/*   Updated: 2025/05/02 20:43:42 by root             ###   ########.fr       */
+/*   Updated: 2025/05/05 11:01:39 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*join_args(int argc, char **argv)
 		if (!tmp)
 			return (NULL);
 		joined = tmp;
+// hay que arreglar el fallo del espacio al final de la cadena
 		tmp = ft_strjoin(joined, " ");
 		free(joined);
 		if (!tmp)
