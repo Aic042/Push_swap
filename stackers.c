@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:13:10 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 12:49:41 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:57:48 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	sort1(t_stack *stack_a, t_stack *stack_b) //k_sort1
 	i = 0;
 	// siz = ft_sqrt(length) * 14 / 10; based
 	//size = size_adjuster(stack_a, 0);
-	// size = 30; // Ajustable
+	size = 30; // Ajustableh
 	while (stack_a->head)
 	{
 		if (stack_a->head->s_index <= i)
