@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:11:08 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 12:51:59 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/05 15:02:53 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,5 @@ void	swap(t_stack *stack, char x, bool b);
 void	push(t_stack *stack1, t_stack *stack2, char x, bool b);
 void	rotate(t_stack *stack, char x, bool b);
 void	reverse_rotate(t_stack *stack, char x, bool b);
-void	size_adjuster(t_stack *stack, int size);
 
 #endif

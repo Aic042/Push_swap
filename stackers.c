@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:13:10 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 12:57:48 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/05 15:02:40 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	s_insertion_sort(t_stack *stack_a, t_stack *stack_b, int length)
 	while (iter++ < n - 3)
 		push(stack_a, stack_b, 'a', true);
 }
+
 
 void	sort1(t_stack *stack_a, t_stack *stack_b) //k_sort1
 {
