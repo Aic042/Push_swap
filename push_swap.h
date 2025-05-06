@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:11:08 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 15:02:53 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/05 20:42:59 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int		stack_head_taker(t_stack *stack);
 void	stack_starter(t_stack *stack_a, t_stack *stack_b, int *num, int count);
 void	stack_pusher(t_stack *stack, int index, int value);
 void	stack_freer(t_stack *stack);
+int		stack_len(t_stack *stack);
 
 ///////////////// SORTING ////////////////////////
 void	sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len);

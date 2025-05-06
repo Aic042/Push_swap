@@ -3,34 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:21:55 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 15:02:25 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/05 21:20:31 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+
 static void init_stacks(t_stack *a, t_stack *b, int *arr, int count)
 {
-	int i;
-	int *sorted;
-	int *indices;
+	int	i;
+	int	*sorted;
+	int	*indices;
 
 	a->head = NULL;
 	a->size = 0;
 	b->head = NULL;
 	b->size = 0;
 
-	// Create a sorted copy of arr to assign indices
 	sorted = malloc(sizeof(int) * count);
 	indices = malloc(sizeof(int) * count);
 	if (!sorted || !indices)
 		exit(1);
 	for (i = 0; i < count; i++)
 		sorted[i] = arr[i];
-	// Simple bubble sort for sorted array
 	for (i = 0; i < count - 1; i++)
 		for (int j = 0; j < count - i - 1; j++)
 			if (sorted[j] > sorted[j + 1])
@@ -39,12 +38,10 @@ static void init_stacks(t_stack *a, t_stack *b, int *arr, int count)
 				sorted[j] = sorted[j + 1];
 				sorted[j + 1] = tmp;
 			}
-	// Assign indices based on sorted positions
 	for (i = 0; i < count; i++)
 		for (int j = 0; j < count; j++)
 			if (arr[i] == sorted[j])
 				indices[i] = j;
-	// Push to stack with correct indices
 	i = count;
 	while (--i >= 0)
 		stack_head_placer(a, indices[i], arr[i]);
@@ -59,7 +56,7 @@ int	main(int argc, char **argv)
 	t_stack	b;
 	int		*nums;
 	int		count;
-
+	
 	if (argc < 2)
 		return (0);
 	if (!parse_args(argc, argv, &nums, &count))

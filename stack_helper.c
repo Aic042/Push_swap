@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_helper.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 13:03:56 by aingunza          #+#    #+#             */
-/*   Updated: 2025/05/05 12:27:34 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/05 20:52:07 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int	stack_head_taker(t_stack *stack)
 	return (value);
 }
 /*
-
 Function popping_a_stack(stack):
 	If the stack's head is NULL (stack is empty):
 		Exit the program with an error
@@ -65,3 +64,26 @@ Function popping_a_stack(stack):
 	Decrement the stack's size
 	Return the stored data
 */
+
+int	stack_len(t_stack *stack)
+{
+	int		len;
+	t_node	*current;
+
+	len = 0;
+	current = stack->head;
+	while (current)
+	{
+		len++;
+		current = current->next;
+	}
+	return (len);
+}
+// Function stack_len(stack):
+//     Initialize a variable len to 0
+//     Set current to the head of the stack
+//     While current is not NULL:
+//         Increment len
+//         Move current to the next node
+//     Return len
+//

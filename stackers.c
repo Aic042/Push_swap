@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stackers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:13:10 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 15:02:40 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/05 21:00:49 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	s_insertion_sort(t_stack *stack_a, t_stack *stack_b, int length)
 	while (iter++ < n - 3)
 		push(stack_a, stack_b, 'a', true);
 }
-
+//finally stack_len of stack_a divided by 14 is the solution
 
 void	sort1(t_stack *stack_a, t_stack *stack_b) //k_sort1
 {
@@ -94,9 +94,7 @@ void	sort1(t_stack *stack_a, t_stack *stack_b) //k_sort1
 	int	size;
 
 	i = 0;
-	// siz = ft_sqrt(length) * 14 / 10; based
-	//size = size_adjuster(stack_a, 0);
-	size = 30; // Ajustableh
+	size = stack_len(stack_a) / 14;
 	while (stack_a->head)
 	{
 		if (stack_a->head->s_index <= i)
