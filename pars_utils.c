@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 08:04:52 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 22:20:37 by root             ###   ########.fr       */
+/*   Updated: 2025/05/08 16:14:05 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	check_dups(int *num_array, int size)
 		while (j < size)
 		{
 			if (num_array[i] == num_array[j])
-				return (ft_printf("Error\n"), 1);
+				return (free(num_array), write(2, "Error\n", 6), 1);
 			j++;
 		}
 		i++;
@@ -56,7 +56,7 @@ int	is_numr(char *str)
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
-			return (ft_printf("Error\n"), 0);
+			return (write(2, "Error\n", 6), 1);
 		i++;
 	}
 	return (1);
@@ -94,7 +94,7 @@ int	parse_args(int argc, char **argv, int **num_array, int *count)
 	{
 		if (!is_numr(split[i]) || ft_atol(split[i]) > INT_MAX
 			|| ft_atol(split[i]) < INT_MIN)
-			return (free_split(split), free(*num_array), ft_printf("Error\n"), 0);
+			return (free_split(split), free(*num_array), print_error(), 1);
 		(*num_array)[i] = ft_atoi(split[i]);
 		i++;
 	}

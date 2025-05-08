@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
+#    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 21:01:27 by root              #+#    #+#              #
-#    Updated: 2025/05/02 16:39:43 by root             ###   ########.fr        #
+#    Updated: 2025/05/08 13:39:05 by aingunza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBFT = libft
 CFLAGS = -Wextra -Wall -Werror -Ofast -g
 HEADERS := -I ./include -I $(LIBFT)/include
 LIBS = -L$(LIBFT) -lft
-SRCS := $(shell find . -iname "*.c")
+SRCS := $(shell find . -maxdepth 1 -iname "*.c")
 OBJS := $(SRCS:.c=.o)
 
 GREEN  := \033[1;32m

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:28:04 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 20:39:10 by root             ###   ########.fr       */
+/*   Updated: 2025/05/08 13:33:50 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,5 @@ void	sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len)
 		sorter2(stack_a, stack_b, len);
 	}
 	else
-		ft_printf("error_sort\n");
+		write(2, "Error\n", 6);
 }
