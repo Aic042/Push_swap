@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 08:04:52 by root              #+#    #+#             */
-/*   Updated: 2025/05/08 16:14:05 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/08 17:03:26 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	is_numr(char *str)
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
-			return (write(2, "Error\n", 6), 1);
+			return (1);
 		i++;
 	}
 	return (1);
