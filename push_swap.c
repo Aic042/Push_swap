@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:21:55 by root              #+#    #+#             */
-/*   Updated: 2025/05/09 10:28:33 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/09 14:03:58 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ static void init_stacks(t_stack *a, int *arr, int count)
 	free(sorted);
 	free(indices);
 }
+
 
 void	init_variables(t_stack *stack_a, t_stack *stack_b)
 {
@@ -85,3 +86,72 @@ int	main(int argc, char **argv)
 	stack_freer(&b);
 	return (0);
 }
+
+// static void init_stacks(t_stack *a, int *arr, int count)
+// {
+// 	int	i;
+// 	int	*sorted;
+// 	int	*indices;
+// 	int j;
+// 	sorted = malloc(sizeof(int) * count);
+// 	indices = malloc(sizeof(int) * count);
+// 	if (!sorted || !indices)
+// 		exit(1);
+// 	// for (i = 0; i < count; i++)
+// 	// 	sorted[i] = arr[i];
+// 	i = 0;
+// 	while(i < count)
+// 	{
+// 		i++;
+// 		sorted[i] = arr[i];
+// 	}
+// 	// for (i = 0; i < count - 1; i++)
+// 	// 	for (int j = 0; j < count - i - 1; j++)
+// 	// 		if (sorted[j] > sorted[j + 1])
+// 	// 		{
+// 	// 			int tmp = sorted[j];
+// 	// 			sorted[j] = sorted[j + 1];
+// 	// 			sorted[j + 1] = tmp;
+// 	// 		}
+// 	i = 0;
+// 	j = 0;
+// 	while (i < count - 1)
+// 	{
+// 		i++;
+// 		while (j < count - i - 1)
+// 		{
+// 			j++;
+// 			if (sorted[j] > sorted[j + 1])
+// 			{
+// 				int tmp = sorted[j];
+// 				sorted[j] = sorted[j + 1];
+// 				sorted[j + 1] = tmp;
+// 			}
+// 		}
+		
+// 	}
+	
+// 	// for (i = 0; i < count; i++)
+// 	// 	for (int j = 0; j < count; j++)
+// 	// 		if (arr[i] == sorted[j])
+// 	// 			indices[i] = j;
+				
+// 	i = 0;
+// 	j = 0;
+// 	while (i < count)
+// 	{
+// 		i++;
+// 		while (j < count)
+// 		{
+// 			j++;
+// 			if (arr[i] == sorted[j])
+// 				indices[i] = j;			
+// 		}
+		
+// 	}
+// 	i = count;
+// 	while (--i >= 0)
+// 		stack_head_placer(a, indices[i], arr[i]);
+// 	free(sorted);
+// 	free(indices);
+// }
