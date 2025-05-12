@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:11:08 by root              #+#    #+#             */
-/*   Updated: 2025/05/09 10:13:04 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/11 23:24:12 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_stack
 
 typedef struct s_sort_data
 {
-	int variable_index;
+	int	variable_index;
 	int	*sorted;
 	int	*indices;
 }	t_sort_data;

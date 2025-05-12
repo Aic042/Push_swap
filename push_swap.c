@@ -3,47 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 12:21:55 by root              #+#    #+#             */
-/*   Updated: 2025/05/09 14:03:58 by aingunza         ###   ########.fr       */
+/*   Created: 2025/05/11 23:15:07 by root              #+#    #+#             */
+/*   Updated: 2025/05/12 10:27:04 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-static void init_stacks(t_stack *a, int *arr, int count)
+t_sort_data	allocate_and_copy(int *arr, int count)
 {
-	int	i;
-	int	*sorted;
-	int	*indices;
+	t_sort_data	data;
+	int			i;
 
-	sorted = malloc(sizeof(int) * count);
-	indices = malloc(sizeof(int) * count);
-	if (!sorted || !indices)
+	data.sorted = malloc(sizeof(int) * count);
+	data.indices = malloc(sizeof(int) * count);
+	if (!data.sorted || !data.indices)
 		exit(1);
-	for (i = 0; i < count; i++)
-		sorted[i] = arr[i];
-	for (i = 0; i < count - 1; i++)
-		for (int j = 0; j < count - i - 1; j++)
-			if (sorted[j] > sorted[j + 1])
-			{
-				int tmp = sorted[j];
-				sorted[j] = sorted[j + 1];
-				sorted[j + 1] = tmp;
-			}
-	for (i = 0; i < count; i++)
-		for (int j = 0; j < count; j++)
-			if (arr[i] == sorted[j])
-				indices[i] = j;
-	i = count;
-	while (--i >= 0)
-		stack_head_placer(a, indices[i], arr[i]);
-	free(sorted);
-	free(indices);
+	i = -1;
+	while (++i < count)
+		data.sorted[i] = arr[i];
+	return (data);
 }
 
+void	sort_and_index(int *arr, t_sort_data *data, int count)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i < count - 1)
+	{
+		j = -1;
+		while (++j < count - i - 1)
+			if (data->sorted[j] > data->sorted[j + 1])
+			{
+				int tmp = data->sorted[j];
+				data->sorted[j] = data->sorted[j + 1];
+				data->sorted[j + 1] = tmp;
+			}
+	}
+	i = -1;
+	while (++i < count)
+	{
+		j = -1;
+		while (++j < count)
+			if (arr[i] == data->sorted[j])
+				data->indices[i] = j;
+	}
+}
+
+static void	init_stacks(t_stack *a, int *arr, int count)
+{
+	t_sort_data	data;
+	int			i;
+
+	data = allocate_and_copy(arr, count);
+	sort_and_index(arr, &data, count);
+	i = count;
+	while (--i >= 0)
+		stack_head_placer(a, data.indices[i], arr[i]);
+	free(data.sorted);
+	free(data.indices);
+}
 
 void	init_variables(t_stack *stack_a, t_stack *stack_b)
 {
@@ -60,11 +83,10 @@ int	last_parse_args(char **argv)
 		print_error();
 		return (0);
 	}
-	else
-		return (1);
+	return (1);
 }
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	t_stack	a;
 	t_stack	b;
