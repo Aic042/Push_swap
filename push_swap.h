@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:11:08 by root              #+#    #+#             */
-/*   Updated: 2025/05/11 23:24:12 by root             ###   ########.fr       */
+/*   Updated: 2025/05/12 13:23:34 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_sort_data
 	int	variable_index;
 	int	*sorted;
 	int	*indices;
+	int	srt_indx_tmp;
 }	t_sort_data;
 
 ////////////////// PARSING //////////////////////

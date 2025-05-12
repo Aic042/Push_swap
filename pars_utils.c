@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 08:04:52 by root              #+#    #+#             */
-/*   Updated: 2025/05/11 23:11:14 by root             ###   ########.fr       */
+/*   Updated: 2025/05/12 13:14:05 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	check_dups(int *num_array, int size)
 		while (j < size)
 		{
 			if (num_array[i] == num_array[j])
-				return (free(num_array), write(1, "Error\n", 6), 1);
+				return (free(num_array), write(2, "Error\n", 6), 1);
 			j++;
 		}
 		i++;
