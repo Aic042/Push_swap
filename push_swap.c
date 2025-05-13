@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 23:15:07 by root              #+#    #+#             */
-/*   Updated: 2025/05/12 16:28:03 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/13 23:41:18 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	init_variables(t_stack *stack_a, t_stack *stack_b)
 {
 	stack_a->head = NULL;
 	stack_a->size = 0;
-	stack_b->head = NULL;
+	stack_b->head = NULL;	
 	stack_b->size = 0;
 }
 
