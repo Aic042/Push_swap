@@ -37,11 +37,15 @@ memoria (split) sera liberada. Luego se hace un atol masivo a los numeros.
 Tras finalizar, se libera la memoria de split y se hace un chequeo para evitar
 que haya numeros duplicados. 
 Luego un checkeo de ft_strlen que no me cabia en parse_args.
+
 Luego init_variables que inicializa los stacks con sus head a NULL y su size a 0.
+
 Despues inicializamos el stack a y b con los numeros que hemos parseado entrando 
 en stack_a a traves de allocate and copy. allocate and copy se encarga de alocar
 la memoria suficiente para los datos sorted y los indices dentro de 
 la estructura de data hecha unicamente para la inicializacion de los stacks.
 Data es resultado de allocate_and_copy y es un puntero a la estructura de datos.
+Luego usamos sort_and_index con el array de numeros, un puntero a 
+la estructura data con count como argumento.
 
 
