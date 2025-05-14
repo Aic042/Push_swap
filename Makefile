@@ -6,14 +6,14 @@
 #    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 21:01:27 by root              #+#    #+#              #
-#    Updated: 2025/05/11 23:14:16 by root             ###   ########.fr        #
+#    Updated: 2025/05/14 17:11:49 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME    = push_swap
 
 LIBFT = libft
-CFLAGS = -Wextra -Wall -Werror -Ofast -g
+CFLAGS = -Wextra -Wall -Werror 
 HEADERS := -I ./include -I $(LIBFT)/include
 LIBS = -L$(LIBFT) -lft
 SRCS := $(shell find . -maxdepth 1 -iname "*.c")

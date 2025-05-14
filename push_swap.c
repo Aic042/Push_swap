@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 23:15:07 by root              #+#    #+#             */
-/*   Updated: 2025/05/13 23:41:18 by root             ###   ########.fr       */
+/*   Updated: 2025/05/14 22:18:46 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,12 @@ t_sort_data	allocate_and_copy(int *arr, int count)
 	data.indices = malloc(sizeof(int) * count);
 	if (!data.sorted || !data.indices)
 		exit(1);
-	i = -1;
-	while (++i < count)
+	i = 0;
+	while (i < count)
+	{
 		data.sorted[i] = arr[i];
+		i++;
+	}
 	return (data);
 }
 
@@ -55,6 +58,7 @@ void	sort_and_index(int *arr, t_sort_data *data, int count)
 				data->indices[i] = j;
 	}
 }
+//No me cabian i++ ni j++ por eso inicialize desde -1 para usar while(++i...)
 
 static void	init_stacks(t_stack *a, int *arr, int count)
 {
@@ -74,7 +78,7 @@ void	init_variables(t_stack *stack_a, t_stack *stack_b)
 {
 	stack_a->head = NULL;
 	stack_a->size = 0;
-	stack_b->head = NULL;	
+	stack_b->head = NULL;
 	stack_b->size = 0;
 }
 
