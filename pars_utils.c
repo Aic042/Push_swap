@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 08:04:52 by root              #+#    #+#             */
-/*   Updated: 2025/05/14 18:07:34 by root             ###   ########.fr       */
+/*   Updated: 2025/05/15 13:49:18 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,37 +101,3 @@ int	parse_args(int argc, char **argv, int **num_array, int *count)
 	}
 	return (free_split(split), !check_dups(*num_array, *count));
 }
-
-// Prototype V1.0
-// int	parse_args(int argc, char **argv)
-// {
-// 	char	*joined;
-// 	char	**split;
-// 	int		*numbers;
-// 	int		i;
-// 	i = 0;
-
-// 	numbers = malloc(sizeof(int));
-// 	if (!numbers)
-// 		exit (1);
-// 	// return (free_split(split), 0);
-// 	joined = join_args(argc, argv);
-// 	if (!joined)
-// 		return (0);
-// 	split = ft_split(joined, ' ');
-// 	free(joined);
-// 	if (!split)
-// 		exit (1);
-// 	i = 0;
-// 	while (split[i] && is_numr(split[i]))
-// 		i++;
-// 	if (split[i])
-// 		return (free_split(split), 0);
-// 	while (--i >= 0)
-// 		numbers[i] = ft_atoi(split[i]);
-// 	i = 0;
-// 	while (split[i])
-// 		free(split[i++]);
-// 	free(split);
-// 	return (!check_dups(numbers, i) && (free(numbers), 1));
-// }
