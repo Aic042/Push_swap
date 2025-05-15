@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_helper.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 13:03:56 by aingunza          #+#    #+#             */
-/*   Updated: 2025/05/05 20:52:07 by root             ###   ########.fr       */
+/*   Updated: 2025/05/15 12:01:09 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	stack_head_placer(t_stack *stack, int index, int value)
 //     Allocate memory for a new node (tmp)
 //     If memory allocation fails:
 //         Return
-//     Set tmp's data to data
-//     Set tmp's index to index
-//     Set tmp's next to the current head of the stack
+//     Settear tmp's data to data
+//     Settear tmp's index to index
+//     Settear tmp's next to the current head of the stack
 //     Update the stack's head to point to tmp
 //     Increment the stack's size
 
@@ -86,4 +86,4 @@ int	stack_len(t_stack *stack)
 //         Increment len
 //         Move current to the next node
 //     Return len
-//
+// https://media.tenor.com/_AZJmhAry0gAAAAj/rat-dancing-meme.gif

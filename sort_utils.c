@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:28:04 by root              #+#    #+#             */
-/*   Updated: 2025/05/08 13:33:50 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/15 11:48:00 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,3 +90,4 @@ void	sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len)
 	else
 		write(2, "Error\n", 6);
 }
+//Si stack_a esta ordenado liberamos el array de num y luego el stack de a

@@ -90,7 +90,7 @@ The `sort` function determines the appropriate sorting strategy based on the inp
 - **Already Sorted**: If `check_sorted` returns true (numbers in `stack_a` are in ascending order), the program frees memory and exits.
 - **2 Numbers**: If `len == 2`, performs a single `swap` (`sa`) to sort.
 - **3 Numbers**: If `len == 3`, uses `simple_sorter` to sort with a combination of `swap`, `rotate`, and `reverse_rotate` based on the position of the minimum index.
-- **4–7 Numbers**: If `len <= 7`, uses `s_insertion_sort`:
+- **4-7 Numbers**: If `len <= 7`, uses `s_insertion_sort`:
   - Pushes all but three numbers to `stack_b`, keeping the smallest numbers first.
   - Sorts the remaining three numbers in `stack_a` using `simple_sorter`.
   - Pushes numbers back from `stack_b` to `stack_a`.
