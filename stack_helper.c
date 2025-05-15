@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 13:03:56 by aingunza          #+#    #+#             */
-/*   Updated: 2025/05/15 12:01:09 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/15 12:05:24 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,3 @@ int	stack_len(t_stack *stack)
 //         Increment len
 //         Move current to the next node
 //     Return len
-// https://media.tenor.com/_AZJmhAry0gAAAAj/rat-dancing-meme.gif

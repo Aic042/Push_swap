@@ -3,22 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   stackers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:13:10 by root              #+#    #+#             */
-/*   Updated: 2025/05/14 17:20:53 by root             ###   ########.fr       */
+/*   Updated: 2025/05/15 13:48:44 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_rot_sort(t_stack *stack, int min_index)
+int	check_rot_sort(t_stack *stack)
 {
 	int	a;
 	int	b;
 	int	c;
 
-	(void)min_index;
 	a = stack->head->value;
 	b = stack->head->next->value;
 	c = stack->head->next->next->value;
@@ -30,6 +29,8 @@ int	check_rot_sort(t_stack *stack, int min_index)
 		return (1);
 	return (0);
 }
+// Checks if three numbers in the stack can be sorted with just one rotation.
+// Returns 1 if a rotation works, 0 if more steps are needed.
 
 void	simple_sorter(t_stack *stack, int len)
 {
@@ -40,7 +41,7 @@ void	simple_sorter(t_stack *stack, int len)
 		return ;
 	min_index = get_min(stack);
 	i = counter(stack->head, min_index);
-	if (check_rot_sort(stack, min_index))
+	if (check_rot_sort(stack))
 	{
 		if (i < len - i)
 			rotate(stack, 'a', 1);
@@ -58,6 +59,8 @@ void	simple_sorter(t_stack *stack, int len)
 			reverse_rotate(stack, 'a', 1);
 	}
 }
+// Sorts a stack of three numbers using the fewest swaps or rotations possible.
+// Stops when the stack is sorted in ascending order.
 
 void	s_insertion_sort(t_stack *stack_a, t_stack *stack_b, int length)
 {
@@ -86,8 +89,10 @@ void	s_insertion_sort(t_stack *stack_a, t_stack *stack_b, int length)
 	while (iter++ < n - 3)
 		push(stack_a, stack_b, 'a', true);
 }
-//finally stack_len of stack_a divided by 14 is the solution
+// Sorts 4 to 7 numbers by moving the smallest to stack_b, sorting the rest,
+// then moving back. Uses rotations to save moves and keep the stack ordered.
 
+//finally stack_len of stack_a divided by 14 is the solution
 void	sort1(t_stack *stack_a, t_stack *stack_b) //k_sort1
 {
 	int	i;
@@ -112,6 +117,8 @@ void	sort1(t_stack *stack_a, t_stack *stack_b) //k_sort1
 			rotate(stack_a, 'a', 1);
 	}
 }
+// Groups numbers by their indices and moves them to stack_b for large stacks.
+// Prepares stack_b for final sorting with minimal operations.
 
 void	sorter2(t_stack *stack_a, t_stack *stack_b, int len)
 {
@@ -138,3 +145,5 @@ void	sorter2(t_stack *stack_a, t_stack *stack_b, int len)
 		}
 	}
 }
+// Moves numbers from stack_b back to stack_a in the right order, starting 
+// with the largest. Picks the fastest rotation to sort big stacks efficiently.

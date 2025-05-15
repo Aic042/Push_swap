@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:07:15 by root              #+#    #+#             */
-/*   Updated: 2025/05/15 11:58:56 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/15 12:05:58 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	swap(t_stack *stack, char x, bool b)
 	if (b)
 		ft_printf("s%c\n", x);
 }
+//Swapear los dos elementos de arriba.
 
 void	push(t_stack *stack1, t_stack *stack2, char x, bool b)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 23:15:07 by root              #+#    #+#             */
-/*   Updated: 2025/05/14 22:18:46 by root             ###   ########.fr       */
+/*   Updated: 2025/05/15 13:20:05 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ t_sort_data	allocate_and_copy(int *arr, int count)
 	}
 	return (data);
 }
+// Allocates memory for the sorted array and indices array, 
+// copies the input array into the sorted array, and returns the 
+// initialized data structure.
 
 void	sort_and_index(int *arr, t_sort_data *data, int count)
 {
@@ -58,6 +61,8 @@ void	sort_and_index(int *arr, t_sort_data *data, int count)
 				data->indices[i] = j;
 	}
 }
+// Sorts the array in ascending order using Bubble Sort and assigns indices 
+// to the original array elements based on their positions in the sorted array.
 //No me cabian i++ ni j++ por eso inicialize desde -1 para usar while(++i...)
 
 static void	init_stacks(t_stack *a, int *arr, int count)
@@ -73,6 +78,8 @@ static void	init_stacks(t_stack *a, int *arr, int count)
 	free(data.sorted);
 	free(data.indices);
 }
+// Initializes the stack a by sorting and indexing the input array, 
+// then placing elements ito the stack in the correct order.
 
 void	init_variables(t_stack *stack_a, t_stack *stack_b)
 {
@@ -81,6 +88,7 @@ void	init_variables(t_stack *stack_a, t_stack *stack_b)
 	stack_b->head = NULL;
 	stack_b->size = 0;
 }
+//No explanation needed
 
 int	main(int argc, char **argv)
 {
@@ -107,6 +115,11 @@ int	main(int argc, char **argv)
 	stack_freer(&b);
 	return (0);
 }
+//Que es...? Count, la cantidad de input nums. Nums es el array de ints
+//stack a y b... bueno, son stacks
+//Parseo, etc, etc, etc...
+//inicializar variables, luego stacks, mire arriba para mas explicación
+//miramos si esta ya sorted, si lo esta de lujo! fin del programa.
 
 // int	last_parse_args(char **argv)
 // {

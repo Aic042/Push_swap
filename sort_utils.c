@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:28:04 by root              #+#    #+#             */
-/*   Updated: 2025/05/15 11:48:00 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/15 13:44:50 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	get_min(t_stack *stack)
 	}
 	return (min_index);
 }
+// Finds the smallest index (s_index) in the stack by checking each node.
+// Returns the smallest index found.
 
 int	counter(t_node *stack, int i)
 {
@@ -42,6 +44,8 @@ int	counter(t_node *stack, int i)
 	}
 	return (count);
 }
+// Counts how many nodes it takes to find a specific index (i) in the stack.
+// Returns the number of steps needed.
 
 int	check_sorted(t_stack *stack)
 {
@@ -58,12 +62,16 @@ int	check_sorted(t_stack *stack)
 	}
 	return (1);
 }
+// Checks if the stack is sorted in ascending order by comparing each value.
+// Returns 1 if sorted, 0 if not.
 
 void	stack_freer(t_stack *stack)
 {
 	while (stack->head)
 		stack_head_taker(stack);
 }
+// Frees all nodes in the stack by removing them one by one.
+// Cleans up memory to prevent leaks.
 
 void	sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len)
 {
@@ -90,4 +98,6 @@ void	sort(t_stack *stack_a, t_stack *stack_b, int *num_str, int len)
 	else
 		write(2, "Error\n", 6);
 }
-//Si stack_a esta ordenado liberamos el array de num y luego el stack de a
+// Si stack_a esta ordenado liberamos el array de num y luego el stack de a
+// Chooses the best way to sort numbers in stack a based on how many there are
+// Uses swap, simple_sorter, insertion sort, or complex sort for larger stacks
