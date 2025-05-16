@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 23:15:07 by root              #+#    #+#             */
-/*   Updated: 2025/05/15 13:20:05 by aingunza         ###   ########.fr       */
+/*   Updated: 2025/05/15 22:51:50 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ int	main(int argc, char **argv)
 //Parseo, etc, etc, etc...
 //inicializar variables, luego stacks, mire arriba para mas explicación
 //miramos si esta ya sorted, si lo esta de lujo! fin del programa.
-
++
 // int	last_parse_args(char **argv)
 // {
 // 	if (ft_strlen(argv[1]) == 0)
